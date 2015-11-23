@@ -1,14 +1,27 @@
 package models;
 
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+
 /**
  * Created by Seven on 2015/11/23.
  */
-public class Person {
+@Table(name = "Persons")
+public class Person extends Model{
+
     private int _Pid;
+    @Column(name="Fname")
     private String _FirstName;
+    @Column(name="Lname")
     private String _LastName;
 
+    public Person(){
+        super();
+    }
+
     public Person(String Fname, String Lname){
+        super();
         this._FirstName = Fname;
         this._LastName = Lname;
     }
